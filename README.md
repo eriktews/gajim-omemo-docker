@@ -1,9 +1,15 @@
 # gajim-omemo in Docker
 
-To run, try:
+## Build
 
 ```
-docker run -ti -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v gajim:/home/gajim  -e uid=$(id -u) -e gid=$(id -g)  gajim-omemo
+docker build -t gajim-omemo-docker .
 ```
 
+## Run
 
+Create a directory _gajim_, then run:
+
+```
+docker run -ti -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v gajim:/home/gajim  -e uid=$(id -u) -e gid=$(id -g)  gajim-omemo-docker
+```
